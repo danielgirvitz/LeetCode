@@ -54,16 +54,16 @@ Output:
 | Max       |
 +-----------+
 
-Solution 01:
+Solution 01 (MySQL):
 SELECT Name AS Customers
 FROM Customers
 WHERE NOT EXISTS
 (SELECT CustomerID FROM Orders WHERE Customers.ID=Orders.CustomerID);
 
-Solution 02:
+Solution 02 (MySQL):
 SELECT Name AS Customers FROM Customers  WHERE Id NOT IN (SELECT CustomerId FROM Orders);
 
-Solution 03:
+Solution 03 (MySQL):
 SELECT Name as Customers
 FROM Customers
 WHERE Id NOT IN 
